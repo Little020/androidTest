@@ -26,7 +26,11 @@ public class MusicPlayService extends Service {
     }
 
     @Override
-    public IBinder onBind(Intent intent) {
-        return null;
+    public IBinder onBind(Intent intent) {return null;}
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mPlayer.stop();
     }
 }
